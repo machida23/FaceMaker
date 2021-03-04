@@ -65,6 +65,11 @@ public class Face extends SurfaceView {
         float width = getWidth();
         float height = getHeight();
 
+        skinPaint.setColor(skinColor);
+        eyePaint.setColor(eyeColor);
+        hairPaint.setColor(hairColor);
+        whitePaint.setColor(Color.WHITE);
+        redPaint.setColor(Color.RED);
 
         canvas.drawCircle(width/2,height/2, radius*7, skinPaint);
 
