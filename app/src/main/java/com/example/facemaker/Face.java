@@ -19,11 +19,11 @@ public class Face extends SurfaceView {
     private int hairStyle; // set to 0 or 1 for different hairstyles
     private int facialElement; // set to 0, 1, or 2 for hair, eyes, or skin
 
-    private Paint skinPaint;
-    private Paint eyePaint;
-    private Paint hairPaint;
-    private Paint whitePaint;
-    private Paint redPaint;
+    private Paint skinPaint = new Paint();
+    private Paint eyePaint = new Paint();
+    private Paint hairPaint = new Paint();
+    private Paint whitePaint = new Paint();
+    private Paint redPaint = new Paint();
 
     // Constructor
     public Face(Context context, AttributeSet attrs){
@@ -55,9 +55,9 @@ public class Face extends SurfaceView {
         canvas.drawOval(100.0f, 100.0f, 100.0f, 100.0f, skinPaint);
 
         // call helper methods
-        //drawHair(canvas);
-        //drawEyes(canvas);
-        //drawMouth(canvas);
+        drawHair(canvas);
+        drawEyes(canvas);
+        drawMouth(canvas);
     }
 
     public void drawHair(Canvas canvas){
