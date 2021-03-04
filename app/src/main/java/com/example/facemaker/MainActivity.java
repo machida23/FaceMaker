@@ -1,6 +1,6 @@
 package com.example.facemaker;
 /**
- * Author: Logan Machida
+ * @Author: Logan Machida
  *
  * Main Activity Class
  *

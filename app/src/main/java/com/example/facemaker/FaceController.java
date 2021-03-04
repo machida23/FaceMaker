@@ -1,6 +1,6 @@
 
 /**
- * Author: Logan Machida
+ * @Author: Logan Machida
  *
  * FaceController Class: Used as a listener for when the user interacts with the screen.
  *

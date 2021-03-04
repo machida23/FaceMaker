@@ -1,5 +1,5 @@
 /**
- * Author: Logan Machida
+ * @Author: Logan Machida
  *
  * Face Class: Draws the face in the app and manages the Surface View.
  *
