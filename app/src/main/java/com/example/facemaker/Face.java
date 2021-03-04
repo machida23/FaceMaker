@@ -1,3 +1,9 @@
+/**
+ * Author: Logan Machida
+ *
+ * Face Class: Draws the face in the app and manages the Surface View.
+ *
+ */
 package com.example.facemaker;
 
 import android.content.Context;
@@ -18,6 +24,8 @@ public class Face extends SurfaceView {
     private int hairColor;
     private int hairStyle; // set to 0 or 1 for different hairstyles
     private int facialElement; // set to 0, 1, or 2 for hair, eyes, or skin
+    float radius = 100;
+
 
     private Paint skinPaint = new Paint();
     private Paint eyePaint = new Paint();
@@ -38,6 +46,8 @@ public class Face extends SurfaceView {
         whitePaint.setColor(Color.WHITE);
         redPaint.setColor(Color.RED);
 
+        setBackgroundColor(Color.WHITE);
+
     }
 
    public void Randomize(){
@@ -52,33 +62,41 @@ public class Face extends SurfaceView {
 
     public void onDraw(Canvas canvas){
 
-        canvas.drawOval(100.0f, 100.0f, 100.0f, 100.0f, skinPaint);
+        float width = getWidth();
+        float height = getHeight();
+
+
+        canvas.drawCircle(width/2,height/2, radius*7, skinPaint);
 
         // call helper methods
-        drawHair(canvas);
-        drawEyes(canvas);
-        drawMouth(canvas);
+        drawHair(canvas,width,height);
+        drawEyes(canvas,width,height);
+        drawMouth(canvas,width,height);
     }
 
-    public void drawHair(Canvas canvas){
+    public void drawHair(Canvas canvas, float width,float height){
         if(hairStyle == 0){
-            canvas.drawOval(100.0f, 100.0f, 100.0f, 100.0f, hairPaint);
+            canvas.drawArc(width/5, height/12, width*4/5, height*2/5, -180, 180,false,hairPaint);
         }
+
         else{
-            canvas.drawOval(100.0f, 100.0f, 100.0f, 100.0f, hairPaint);
+            // draw nothing for bald hair
         }
     }
 
-    public void drawEyes(Canvas canvas){
-        canvas.drawOval(100.0f, 100.0f, 100.0f, 100.0f, whitePaint);
-        canvas.drawOval(100.0f, 100.0f, 100.0f, 100.0f, eyePaint);
-        canvas.drawOval(100.0f, 100.0f, 100.0f, 100.0f, whitePaint);
-        canvas.drawOval(100.0f, 100.0f, 100.0f, 100.0f, eyePaint);
+    public void drawEyes(Canvas canvas, float width, float height){
+        canvas.drawCircle(width*2/3, height/3,radius*3/2, whitePaint);
+        canvas.drawCircle(width/3, height/3,radius*3/2, whitePaint);
+        canvas.drawCircle(width/3, height/3,radius, eyePaint);
+        canvas.drawCircle(width*2/3, height/3,radius, eyePaint);
+
+
     }
 
-    public void drawMouth(Canvas canvas){
-        canvas.drawOval(100.0f, 100.0f, 100.0f, 100.0f, redPaint);
+    public void drawMouth(Canvas canvas, float width, float height){
+        canvas.drawArc(width/4, height/3, width*3/4, height*4/5, 180, -180,false,redPaint);
     }
+
 
 
     // getter methods

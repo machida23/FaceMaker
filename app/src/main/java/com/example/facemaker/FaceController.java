@@ -1,4 +1,10 @@
-package com.example.facemaker;
+
+/**
+ * Author: Logan Machida
+ *
+ * FaceController Class: Used as a listener for when the user interacts with the screen.
+ *
+ */package com.example.facemaker;
 
 import android.graphics.Color;
 import android.view.View;
@@ -85,10 +91,18 @@ public class FaceController implements AdapterView.OnItemSelectedListener, SeekB
     public void onStopTrackingTouch(SeekBar seekBar) { }
 
 
-    // Implement Spinner to change hairstyle
+    // Implement Radio Buttons to change body element
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-
+        if(checkedId == R.id.hairRadioButton){
+            faceView.setFacialElement(0);
+        }
+        else if(checkedId == R.id.eyesRadioButton){
+            faceView.setFacialElement(1);
+        }
+        else{
+            faceView.setFacialElement(2);
+        }
     }
 
 

@@ -1,5 +1,10 @@
 package com.example.facemaker;
-
+/**
+ * Author: Logan Machida
+ *
+ * Main Activity Class
+ *
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
