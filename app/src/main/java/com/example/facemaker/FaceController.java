@@ -100,9 +100,27 @@ public class FaceController implements AdapterView.OnItemSelectedListener, SeekB
         else if(checkedId == R.id.eyesRadioButton){
             faceView.setFacialElement(1);
         }
-        else{
+        else if(faceView.getFacialElement()== 2){
             faceView.setFacialElement(2);
         }
+        if(faceView.getFacialElement()== 0){
+            redSeekBar.setProgress(Color.red(faceView.getHairColor()));
+            greenSeekBar.setProgress(Color.green(faceView.getHairColor()));
+            blueSeekBar.setProgress(Color.red(faceView.getHairColor()));
+        }
+        else if(faceView.getFacialElement()== 1){
+            redSeekBar.setProgress(Color.red(faceView.getEyeColor()));
+            greenSeekBar.setProgress(Color.green(faceView.getEyeColor()));
+            blueSeekBar.setProgress(Color.red(faceView.getEyeColor()));
+        }
+        else if(faceView.getFacialElement()== 2){
+            redSeekBar.setProgress(Color.red(faceView.getSkinColor()));
+            greenSeekBar.setProgress(Color.green(faceView.getSkinColor()));
+            blueSeekBar.setProgress(Color.red(faceView.getSkinColor()));
+        }
+
+        faceView.invalidate();
+
     }
 
 

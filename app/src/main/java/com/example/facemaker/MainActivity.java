@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         FaceController faceController = new FaceController(faceView, redBar, greenBar, blueBar, hairSpinner);
 
         // add elements to spinner
-        String[] hairType = {"bald", "smooth"};
+        String[] hairType = {"smooth", "bald"};
         ArrayAdapter<String> arrayAdapter= new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, hairType);
         hairSpinner.setAdapter(arrayAdapter);
         hairSpinner.setOnItemSelectedListener(faceController);
